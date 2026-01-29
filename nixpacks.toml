@@ -8,4 +8,4 @@ cmds = ["npm i -g pnpm@10.28.2", "npx pnpm install"]
 cmds = ["npx pnpm build:api", "npx pnpm build:voice-engine", "npx pnpm build:dashboard"]
 
 [start]
-cmd = "npx pnpm start"
+cmd = "node start.js"
