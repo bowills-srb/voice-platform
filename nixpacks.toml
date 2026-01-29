@@ -1,11 +1,8 @@
-# Railway Monorepo Configuration
-# Set SERVICE env var to: api, voice-engine, or dashboard
-
 [phases.setup]
 nixPkgs = ["nodejs_20", "openssl"]
 
 [phases.install]
-cmds = ["npm i -g pnpm@10.28.2 && pnpm install"]
+cmds = ["npm i -g pnpm@10.28.2", "export PATH=$PATH:/usr/local/lib/node_modules/pnpm/bin:/root/.npm-global/bin:$(npm root -g)/.bin && pnpm install"]
 
 [phases.build]
 cmds = [
