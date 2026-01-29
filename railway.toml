@@ -2,4 +2,4 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "pnpm start"
+startCommand = "node start.js"
