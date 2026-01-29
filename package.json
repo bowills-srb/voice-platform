@@ -1,0 +1,24 @@
+{
+  "name": "voice-platform",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "postinstall": "pnpm --filter @voice-platform/database exec prisma generate",
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "build:api": "pnpm --filter @voice-platform/shared build && pnpm --filter @voice-platform/database build && pnpm --filter @voice-platform/api build",
+    "build:voice-engine": "pnpm --filter @voice-platform/shared build && pnpm --filter @voice-platform/database build && pnpm --filter @voice-platform/voice-engine build",
+    "build:dashboard": "pnpm --filter @voice-platform/shared build && pnpm --filter @voice-platform/dashboard build",
+    "start": "node start.js",
+    "start:api": "node apps/api/dist/index.js",
+    "start:voice-engine": "node apps/voice-engine/dist/index.js",
+    "start:dashboard": "node apps/dashboard/.next/standalone/apps/dashboard/server.js",
+    "db:generate": "pnpm --filter @voice-platform/database generate",
+    "db:migrate": "pnpm --filter @voice-platform/database migrate",
+    "db:push": "pnpm --filter @voice-platform/database exec prisma db push",
+    "db:studio": "pnpm --filter @voice-platform/database studio"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}
