@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_20", "openssl"]
+nixPkgs = ["nodejs_18", "npm-9_x"]
 
 [phases.install]
-cmds = ["npm i -g pnpm@10.28.2", "npx pnpm install"]
+cmds = ["npm install -g pnpm", "pnpm install"]
 
 [phases.build]
-cmds = ["npx pnpm build:api", "npx pnpm build:voice-engine", "npx pnpm build:dashboard"]
+cmds = ["pnpm build:dashboard"]
 
 [start]
-cmd = "node start.js"
+cmd = "cd apps/dashboard && npm run start"
