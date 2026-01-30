@@ -8,4 +8,4 @@ cmds = ["npm install -g pnpm", "pnpm install"]
 cmds = ["pnpm build:dashboard"]
 
 [start]
-cmd = "cd apps/dashboard && npm run start"
+cmd = "cd apps/dashboard && npx next start -p ${PORT:-3000}"
