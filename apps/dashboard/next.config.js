@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['@voice-platform/shared'],
-  output: 'standalone',
 };
 
 module.exports = nextConfig;
